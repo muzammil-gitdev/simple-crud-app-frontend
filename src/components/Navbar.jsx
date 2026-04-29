@@ -14,6 +14,10 @@ function Navbar() {
       title: "Data",
       href: "/data",
     },
+    {
+      title: "Data Table",
+      href: "/datatable",
+    },
   ];
   return (
     <header className="bg-neutral-100 shadow-xl">
