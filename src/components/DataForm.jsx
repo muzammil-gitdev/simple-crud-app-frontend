@@ -29,6 +29,7 @@ function DataForm() {
       );
       const result = await response.json();
       console.log(result);
+      if (result.status === "success") setFormData(initialFormState);
     } catch (err) {
       console.log(err.message);
     }
@@ -40,7 +41,7 @@ function DataForm() {
   return (
     <div>
       <Navbar />
-      <div className="border max-w-10/12 mx-auto px-8 py-10 rounded-lg my-10">
+      <div className="border max-w-8/12 mx-auto px-8 py-10 rounded-lg my-10">
         <h1 className="mb-6 text-2xl">Student Information</h1>
         <form onSubmit={handleSubmit}>
           <div className="flex flex-col items-start gap-y-4">
@@ -59,6 +60,7 @@ function DataForm() {
               placeholder="Registration Number (22-ARID-XXXX)"
               required
               name="regno"
+              value={formData.regno}
               onChange={handleChange}
             />
             <select
